@@ -9,7 +9,7 @@ export default function Services() {
   const handleBuy = (plan: string) => {
     toast({
       title: `${plan} Selected`,
-      description: "Stripe integration pending. Please contact us to proceed.",
+      description: "Our team will reach out to you to finalize the details. Payment is required only after you get your car!",
     });
   };
 
@@ -110,7 +110,7 @@ export default function Services() {
                   tier.popular ? "shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-0.5" : ""
                 }`}
               >
-                Get Started
+                Reserve Now
               </Button>
             </motion.div>
           ))}

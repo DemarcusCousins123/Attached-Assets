@@ -39,7 +39,7 @@ export default function Home() {
                 Know If Your Car Deal Is <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Good</span> Before You Buy.
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
-                Upload your deal sheet or vehicle link, and our expert advisors will score the deal, check the market, and give you professional recommendations.
+                Upload your deal sheet or vehicle link, and our expert advisors will score the deal, check the market, and give you professional recommendations. No upfront payment required—pay only after you get your car.
               </p>
             </motion.div>
           </div>
