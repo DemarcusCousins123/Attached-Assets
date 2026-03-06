@@ -1,0 +1,219 @@
+Here is an **improved copy-paste prompt** you can give to a web app builder like Lovable, Bolt.new, or Replit that includes **the deal analyzer + a contact/communication system** for customers to send you car requests.
+
+---
+
+# Copy-Paste Prompt for Web App Builder
+
+Build a modern web application called **Apex Auto Advisory**.
+The platform helps people determine whether a car is a good deal and also allows them to contact our advisory team for personalized vehicle research.
+
+The design should look like a professional startup platform with a **dark blue, white, and gray color scheme** and a clean modern UI similar to a fintech analytics dashboard.
+
+The platform should include both **automated deal analysis tools** and **direct communication with our advisory team**.
+
+---
+
+# Core Feature 1: Car Deal Analyzer
+
+On the homepage, include a tool where users can paste a car listing URL or manually enter vehicle information.
+
+Input fields should include:
+
+Vehicle Make
+Vehicle Model
+Year
+Mileage
+Price
+Location
+Listing URL (optional)
+
+After submission, generate a **Deal Analysis Report** showing:
+
+* Estimated fair market value range
+* Comparison to similar listings
+* A Deal Score from 1–100
+* Labels such as:
+
+  * Great Deal
+  * Fair Price
+  * Slightly Overpriced
+  * Overpriced
+* Recommended negotiation price range
+* Short explanation of whether the deal is good or bad
+
+Display the results in a clean dashboard with charts and a clear score indicator.
+
+---
+
+# Core Feature 2: Vehicle Request System
+
+Create a section where users can **request help finding a car**.
+
+The form should allow users to submit:
+
+Budget range
+Preferred make and model
+Vehicle type (SUV, sedan, truck, etc.)
+Maximum mileage
+Preferred year range
+Location
+Additional notes
+
+Example notes:
+“I’m looking for a reliable SUV under $25k with good resale value.”
+
+After submission, display a confirmation message:
+
+“Our advisory team will research vehicles that match your criteria and send you recommendations within 24–48 hours.”
+
+The request should appear in an **admin dashboard** so our team can view and respond to requests.
+
+---
+
+# Core Feature 3: Contact & Messaging
+
+Create a **Contact Our Advisors** page with the following options:
+
+### Email Contact Form
+
+Fields:
+Name
+Email
+Subject
+Message
+
+Messages should be sent to the business email inbox.
+
+### SMS/Text Contact Option
+
+Allow users to optionally enter their phone number so the team can reply via text message.
+
+Include a message:
+
+“You may receive a text message from our advisory team regarding your request.”
+
+---
+
+# Pages to Include
+
+### Homepage
+
+Headline:
+
+**“Know If Your Car Deal Is Good Before You Buy.”**
+
+Sections:
+
+How It Works:
+
+1. Enter a vehicle listing
+2. Our platform compares it to the market
+3. Get a deal analysis and recommended price
+
+Buttons:
+
+* Analyze My Deal
+* Request Car Recommendations
+
+---
+
+### Services Page
+
+List services:
+
+Deal Review
+
+* Full dealership offer breakdown
+* Hidden fee identification
+* Add-on evaluation
+
+Vehicle Comparison Report
+
+* Compare multiple vehicles
+* Reliability analysis
+* Ownership cost estimates
+
+Premium Advisory Package
+
+* Personalized vehicle search
+* Deal analysis
+* Negotiation strategy guidance
+
+---
+
+### Submit Deal Page
+
+Allow users to upload:
+
+Vehicle details
+Listing link
+Dealer quote screenshot
+Email address
+
+Display confirmation message after submission.
+
+---
+
+### Client Dashboard
+
+Users should be able to:
+
+* View submitted deal analyses
+* Submit new requests
+* Download reports
+* Contact the advisory team
+
+---
+
+# Admin Dashboard (For My Team)
+
+Create a simple admin panel where the team can:
+
+View deal submissions
+View vehicle request forms
+Respond to customer inquiries
+Manage client reports
+
+---
+
+# Payment Integration
+
+Add **Stripe payment integration** for services.
+
+Example pricing:
+
+Basic Deal Analysis — $29
+Full Deal Review — $79
+Premium Advisory Package — $149
+
+Require payment before full report delivery.
+
+---
+
+# Legal Disclaimer
+
+Add a disclaimer on the site:
+
+“Apex Auto Advisory provides independent research and advisory services. We do not negotiate with dealerships, sell vehicles, or act as licensed vehicle brokers.”
+
+---
+
+# Extra Features (If Possible)
+
+Deal Score gauge visualization
+Charts showing price vs market average
+Comparable listings table
+Estimated resale value
+
+---
+
+💡 **One important idea for your business:**
+If customers can both **submit a deal AND request help finding cars**, your service becomes more valuable because you're helping at **both stages of the buying process**.
+
+---
+
+If you want, I can also show you:
+
+* **3 features that would make this platform look like a $1M startup**
+* **How to make the site automatically pull real listings from places like Autotrader or CarGurus**
+* **How to get your first 20 customers even while still in high school** 🚀
