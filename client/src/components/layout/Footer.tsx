@@ -12,7 +12,7 @@ export function Footer() {
                 <Car className="h-5 w-5 text-white" />
               </div>
               <span className="font-bold text-xl text-white tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
-                Apex Auto
+                CarConnects
               </span>
             </Link>
             <p className="text-sm text-slate-400 mb-6">
@@ -33,7 +33,6 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4 tracking-wide">Company</h4>
             <ul className="space-y-3 text-sm">
               <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/dashboard" className="hover:text-primary transition-colors">Client Portal</Link></li>
               <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
@@ -43,22 +42,22 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-primary" />
-                <span>hello@apexautoadvisory.com</span>
+                <span>gvclips11@gmail.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-primary" />
-                <span>(555) 123-4567</span>
+                <span>908-530-8897</span>
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span>San Francisco, CA</span>
+                <span>Central New Jersey</span>
               </li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} Apex Auto Advisory. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} CarConnects. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <span className="hover:text-white cursor-pointer">Privacy Policy</span>
             <span className="hover:text-white cursor-pointer">Terms of Service</span>

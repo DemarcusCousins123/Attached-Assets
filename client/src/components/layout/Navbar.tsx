@@ -11,7 +11,6 @@ export function Navbar() {
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "Contact", href: "/contact" },
-    { name: "Dashboard", href: "/dashboard" },
   ];
 
   return (
@@ -24,7 +23,7 @@ export function Navbar() {
                 <Car className="h-6 w-6 text-primary" />
               </div>
               <span className="font-bold text-xl tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
-                Apex Auto
+                CarConnects
               </span>
             </Link>
           </div>
@@ -44,11 +43,6 @@ export function Navbar() {
                 </Link>
               ))}
             </div>
-            <Link href="/admin">
-              <Button variant="outline" className="rounded-full px-6 border-primary/20 hover:bg-primary/5 text-primary">
-                Admin
-              </Button>
-            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -81,13 +75,6 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="/admin"
-              className="block px-4 py-3 mt-4 text-center rounded-lg bg-primary/10 text-primary font-semibold"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Admin Access
-            </Link>
           </div>
         </div>
       )}

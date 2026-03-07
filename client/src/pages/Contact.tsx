@@ -61,8 +61,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-foreground">Email Us</h4>
-                  <p className="text-muted-foreground">hello@apexautoadvisory.com</p>
-                  <p className="text-sm text-slate-500 mt-1">We aim to reply within 4 hours.</p>
+                  <p className="text-muted-foreground">gvclips11@gmail.com</p>
+                  <p className="text-sm text-slate-500 mt-1">We aim to reply within 24 hours.</p>
                 </div>
               </div>
               
@@ -72,8 +72,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-foreground">Call Us</h4>
-                  <p className="text-muted-foreground">(555) 123-4567</p>
-                  <p className="text-sm text-slate-500 mt-1">Mon-Fri from 8am to 6pm PST.</p>
+                  <p className="text-muted-foreground">908-530-8897</p>
+                  <p className="text-sm text-slate-500 mt-1">Mon-Fri from 9am to 6pm EST.</p>
                 </div>
               </div>
 
@@ -82,9 +82,9 @@ export default function Contact() {
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-foreground">Office</h4>
-                  <p className="text-muted-foreground">San Francisco, CA</p>
-                  <p className="text-sm text-slate-500 mt-1">Available nationwide remotely.</p>
+                  <h4 className="text-lg font-semibold text-foreground">Location</h4>
+                  <p className="text-muted-foreground">Central New Jersey</p>
+                  <p className="text-sm text-slate-500 mt-1">Serving nationwide.</p>
                 </div>
               </div>
             </div>

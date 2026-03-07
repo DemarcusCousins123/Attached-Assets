@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
+import { sendContactEmail } from "./email";
 
 // Simple mock deal analyzer logic to generate a score and evaluation
 function analyzeDeal(price: number, year: number, mileage: number) {
@@ -113,6 +114,16 @@ export async function registerRoutes(
     try {
       const input = api.contactMessages.create.input.parse(req.body);
       const newMessage = await storage.createContactMessage(input);
+      
+      // Send email to company
+      await sendContactEmail(
+        input.name,
+        input.email,
+        input.phone,
+        input.subject,
+        input.message
+      );
+      
       res.status(201).json(newMessage);
     } catch (err) {
       if (err instanceof z.ZodError) {

@@ -40,15 +40,15 @@ export default function Services() {
       popular: true
     },
     {
-      name: "Premium Advisory",
+      name: "Vehicle Sourcing",
       price: "$149",
-      description: "We handle the complex research and strategy for you.",
+      description: "We find the perfect car for you based on your criteria.",
       features: [
-        "Everything in Full Review",
-        "Vehicle sourcing assistance",
-        "Unlimited Q&A via phone",
-        "Dealer communication strategy",
-        "Financing rate check"
+        "Detailed criteria assessment",
+        "Multi-state vehicle search",
+        "Deal analysis on found vehicles",
+        "Negotiation support",
+        "Nationwide inventory access"
       ],
       popular: false
     }
