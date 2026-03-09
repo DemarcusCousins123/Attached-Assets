@@ -82,7 +82,7 @@ export default function Services() {
             Our Services
           </h1>
           <p className="text-xl text-muted-foreground">
-            Expert automotive advisory tailored to your needs. Whether you have a deal to review or need us to find your next car.
+            Expert automotive advisory tailored to your needs. Whether you're reviewing a deal, looking for a car, or need us to find the perfect vehicle for you.
           </p>
         </div>
 
@@ -118,16 +118,6 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
-
-              <Button 
-                onClick={() => handleBuy(tier.name)}
-                variant={tier.popular ? "default" : "outline"}
-                className={`w-full h-12 rounded-xl text-base font-semibold transition-all duration-300 ${
-                  tier.popular ? "shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-0.5" : ""
-                }`}
-              >
-                Reserve Now
-              </Button>
             </motion.div>
           ))}
         </div>
