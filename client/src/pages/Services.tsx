@@ -21,7 +21,7 @@ export default function Services() {
         "Market value comparison",
         "Dealer fee audit",
         "Lease vs Buy breakdown",
-        "24-hour turnaround"
+        "Respond within 24-48 hours"
       ],
       popular: false
     },
@@ -33,7 +33,7 @@ export default function Services() {
         "Target counter-offer numbers",
         "Trade-in value assessment",
         "Direct email support",
-        "4-hour expedited turnaround"
+        "Respond within 12 hours"
       ],
       popular: true
     },
@@ -69,8 +69,8 @@ export default function Services() {
     },
     {
       icon: <Handshake className="h-8 w-8 text-primary" />,
-      title: "We Negotiate for You",
-      description: "We handle the back-and-forth with dealers to get you the best price, favorable terms, and a solid warranty."
+      title: "We Advise on Negotiation",
+      description: "We suggest exactly what you should negotiate with the dealers to get you the best price, favorable terms, and a solid warranty."
     }
   ];
 

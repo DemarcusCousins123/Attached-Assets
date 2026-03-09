@@ -29,7 +29,7 @@ export default function Home() {
                 Know If Your Car Deal Is <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Good</span> Before You Buy.
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
-                Submit your car details or upload a deal sheet to CarConnects. Our expert advisors will analyze the market, score the deal, and give you professional recommendations. No upfront payment required—pay only after we find you a car.
+                Connect with CarConnects for expert automotive advice. Our specialists analyze the market and provide professional recommendations to ensure you get the best deal possible. No upfront payment required—pay only after we find you a car.
               </p>
             </motion.div>
           </div>
