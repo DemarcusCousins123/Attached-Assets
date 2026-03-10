@@ -42,11 +42,11 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-primary" />
-                <span>gvclips11@gmail.com</span>
+                <span>carconnectsnj@gmail.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-primary" />
-                <span>908-530-8897</span>
+                <span>(908) 864-7206</span>
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 text-primary" />
