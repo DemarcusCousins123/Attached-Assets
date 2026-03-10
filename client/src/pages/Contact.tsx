@@ -1,44 +1,7 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { api } from "@shared/routes";
-import { useCreateContactMessage } from "@/hooks/use-contact-messages";
-import { useToast } from "@/hooks/use-toast";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 
 export default function Contact() {
-  const { toast } = useToast();
-  const createMutation = useCreateContactMessage();
-
-  const form = useForm<z.infer<typeof api.contactMessages.create.input>>({
-    resolver: zodResolver(api.contactMessages.create.input),
-    defaultValues: {
-      name: "", email: "", phone: "", subject: "", message: ""
-    }
-  });
-
-  const onSubmit = (data: z.infer<typeof api.contactMessages.create.input>) => {
-    createMutation.mutate(data, {
-      onSuccess: () => {
-        toast({
-          title: "Message Sent!",
-          description: "Our team will get back to you shortly.",
-        });
-        form.reset();
-      },
-      onError: (err) => {
-        toast({
-          variant: "destructive",
-          title: "Error sending message",
-          description: err.message,
-        });
-      }
-    });
-  };
 
   return (
     <div className="min-h-screen bg-background py-20">
@@ -55,16 +18,16 @@ export default function Contact() {
             </p>
 
             <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="bg-primary/10 p-3 rounded-xl">
+              <a href="mailto:gvclips11@gmail.com" className="flex items-start gap-4 group">
+                <div className="bg-primary/10 p-3 rounded-xl group-hover:bg-primary/20 transition-colors">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-foreground">Email Us</h4>
-                  <p className="text-muted-foreground">gvclips11@gmail.com</p>
-                  <p className="text-sm text-slate-500 mt-1">We aim to reply within 24 hours.</p>
+                  <h4 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">Email Us</h4>
+                  <p className="text-muted-foreground group-hover:text-primary/80 transition-colors">gvclips11@gmail.com</p>
+                  <p className="text-sm text-slate-500 mt-1">Click to open your email client</p>
                 </div>
-              </div>
+              </a>
               
               <div className="flex items-start gap-4">
                 <div className="bg-primary/10 p-3 rounded-xl">
@@ -90,50 +53,25 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Form */}
-          <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-10 border border-border shadow-xl">
-            <h3 className="text-2xl font-bold text-foreground mb-8">Send a Message</h3>
+          {/* CTA Section */}
+          <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-10 border border-border shadow-xl flex flex-col justify-center">
+            <h3 className="text-2xl font-bold text-foreground mb-6">Ready to Get Started?</h3>
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              Tell us about your deal or the car you're looking for. Click the button below to send us an email with your details, and our team will get back to you shortly.
+            </p>
             
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Your Name</Label>
-                  <Input id="name" placeholder="John Doe" className="h-12 rounded-xl" {...form.register("name")} />
-                  {form.formState.errors.name && <p className="text-sm text-destructive">{form.formState.errors.name.message}</p>}
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email Address</Label>
-                  <Input id="email" type="email" placeholder="john@example.com" className="h-12 rounded-xl" {...form.register("email")} />
-                  {form.formState.errors.email && <p className="text-sm text-destructive">{form.formState.errors.email.message}</p>}
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number (Optional)</Label>
-                  <Input id="phone" placeholder="(555) 000-0000" className="h-12 rounded-xl" {...form.register("phone")} />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="How can we help?" className="h-12 rounded-xl" {...form.register("subject")} />
-                  {form.formState.errors.subject && <p className="text-sm text-destructive">{form.formState.errors.subject.message}</p>}
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="Type your message here..." className="min-h-[150px] rounded-xl resize-none" {...form.register("message")} />
-                {form.formState.errors.message && <p className="text-sm text-destructive">{form.formState.errors.message.message}</p>}
-              </div>
-
-              <Button 
-                type="submit" 
-                disabled={createMutation.isPending}
-                className="w-full h-14 text-lg rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-semibold"
-              >
-                {createMutation.isPending ? "Sending..." : "Send Message"}
-              </Button>
-            </form>
+            <Button 
+              asChild
+              className="w-full h-14 text-lg rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-semibold"
+            >
+              <a href="mailto:gvclips11@gmail.com?subject=CarConnects%20Request">
+                Send Us Your Details
+              </a>
+            </Button>
+            
+            <p className="text-center text-sm text-slate-500 mt-6">
+              Or you can also reach us by phone at 908-530-8897
+            </p>
           </div>
 
         </div>
