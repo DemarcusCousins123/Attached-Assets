@@ -1,7 +1,21 @@
-import { MapPin, Mail, Phone } from "lucide-react";
+import { useState } from "react";
+import { MapPin, Mail, Phone, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
+  const { toast } = useToast();
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("gvclips11@gmail.com");
+    setCopied(true);
+    toast({
+      title: "Email copied!",
+      description: "Paste it into your email client.",
+    });
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <div className="min-h-screen bg-background py-20">
@@ -18,27 +32,55 @@ export default function Contact() {
             </p>
 
             <div className="space-y-8">
-              <a href="mailto:gvclips11@gmail.com" className="flex items-start gap-4 group">
-                <div className="bg-primary/10 p-3 rounded-xl group-hover:bg-primary/20 transition-colors">
-                  <Mail className="h-6 w-6 text-primary" />
+              <div className="bg-slate-50 dark:bg-slate-800/30 rounded-2xl p-6 border border-border">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="bg-primary/10 p-3 rounded-xl">
+                    <Mail className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-foreground">Email Us</h4>
+                    <p className="text-muted-foreground">gvclips11@gmail.com</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">Email Us</h4>
-                  <p className="text-muted-foreground group-hover:text-primary/80 transition-colors">gvclips11@gmail.com</p>
-                  <p className="text-sm text-slate-500 mt-1">Click to open your email client</p>
+                <div className="flex gap-3 ml-16">
+                  <Button 
+                    asChild
+                    size="sm"
+                    className="rounded-lg"
+                  >
+                    <a href="mailto:gvclips11@gmail.com">
+                      Open Email Client
+                    </a>
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    size="sm"
+                    onClick={copyEmail}
+                    className="rounded-lg"
+                  >
+                    {copied ? (
+                      <>
+                        <Check className="h-4 w-4 mr-2" /> Copied
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="h-4 w-4 mr-2" /> Copy Email
+                      </>
+                    )}
+                  </Button>
                 </div>
-              </a>
+              </div>
               
-              <div className="flex items-start gap-4">
-                <div className="bg-primary/10 p-3 rounded-xl">
+              <a href="tel:9085308897" className="flex items-start gap-4 group">
+                <div className="bg-primary/10 p-3 rounded-xl group-hover:bg-primary/20 transition-colors">
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-foreground">Call Us</h4>
-                  <p className="text-muted-foreground">908-530-8897</p>
+                  <h4 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">Call Us</h4>
+                  <p className="text-muted-foreground group-hover:text-primary/80 transition-colors">908-530-8897</p>
                   <p className="text-sm text-slate-500 mt-1">Mon-Fri from 9am to 6pm EST.</p>
                 </div>
-              </div>
+              </a>
 
               <div className="flex items-start gap-4">
                 <div className="bg-primary/10 p-3 rounded-xl">
