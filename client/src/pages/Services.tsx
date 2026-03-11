@@ -1,51 +1,61 @@
 import { motion } from "framer-motion";
 import { Check, Search, TrendingUp, Handshake, FileText } from "lucide-react";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
 
 export default function Services() {
-  const { toast } = useToast();
-
-  const handleBuy = (plan: string) => {
-    toast({
-      title: `${plan} Selected`,
-      description: "Our team will reach out to you to finalize the details. Payment is required only after we find your car or help you get a good deal!",
-    });
-  };
+  const [, navigate] = useLocation();
 
   const tiers = [
     {
-      name: "Basic Deal Analysis",
-      description: "A quick, data-driven review of your dealer quote.",
+      name: "Basic Deal Check",
+      price: "$30",
+      description: "Perfect for buyers who want a quick evaluation.",
       features: [
-        "Market value comparison",
-        "Dealer fee audit",
-        "Lease vs Buy breakdown",
+        "Price fairness analysis",
+        "Market comparison with similar listings",
+        "Basic vehicle value estimate",
+        "Short written recommendation",
         "Respond within 24-48 hours"
       ],
       popular: false
     },
     {
-      name: "Full Deal Review",
-      description: "Comprehensive analysis with negotiation strategy.",
+      name: "Smart Buyer Review",
+      price: "$55",
+      description: "Best for buyers seriously considering a vehicle.",
       features: [
-        "Everything in Basic",
-        "Target counter-offer numbers",
-        "Trade-in value assessment",
-        "Direct email support",
+        "Full deal evaluation",
+        "Market price analysis",
+        "Vehicle reliability overview",
+        "Ownership cost estimate",
+        "Negotiation price target",
         "Respond within 12 hours"
       ],
       popular: true
     },
     {
-      name: "Vehicle Sourcing",
-      description: "We find the perfect car for you based on your criteria.",
+      name: "Premium Car Consultation",
+      price: "$75",
+      description: "Complete guidance before purchasing a vehicle.",
       features: [
-        "Detailed criteria assessment",
-        "Multi-state vehicle search",
-        "Deal analysis on found vehicles",
-        "Negotiation support",
-        "Nationwide inventory access"
+        "Everything in Smart Buyer Review",
+        "Personalized vehicle recommendations",
+        "Comparison of multiple listings",
+        "Negotiation strategy",
+        "One-on-one consultation"
+      ],
+      popular: false
+    },
+    {
+      name: "Custom Search Service",
+      price: "$50",
+      description: "We help find the right car for you.",
+      features: [
+        "Personalized car search based on your needs",
+        "Curated vehicle listings",
+        "Market value analysis for each option",
+        "Purchase strategy consultation"
       ],
       popular: false
     }
@@ -86,7 +96,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {tiers.map((tier, idx) => (
             <motion.div
               key={tier.name}
@@ -104,20 +114,33 @@ export default function Services() {
                   </span>
                 </div>
               )}
-              
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-foreground mb-2">{tier.name}</h3>
-                <p className="text-muted-foreground text-sm">{tier.description}</p>
+
+              <div className="mb-6">
+                <h3 className="text-lg font-bold text-foreground mb-1">{tier.name}</h3>
+                <p className="text-muted-foreground text-sm mb-4">{tier.description}</p>
+                <div className="flex items-end gap-1">
+                  <span className="text-4xl font-extrabold text-foreground">{tier.price}</span>
+                  <span className="text-muted-foreground text-sm mb-1">/ service</span>
+                </div>
               </div>
 
-              <ul className="space-y-4 mb-8 flex-1">
+              <ul className="space-y-3 mb-8 flex-1">
                 {tier.features.map((feature, i) => (
                   <li key={i} className="flex items-start">
-                    <Check className="h-5 w-5 text-primary shrink-0 mr-3" />
+                    <Check className="h-4 w-4 text-primary shrink-0 mr-2 mt-0.5" />
                     <span className="text-slate-600 dark:text-slate-300 text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
+
+              <Button
+                onClick={() => navigate("/contact")}
+                variant={tier.popular ? "default" : "outline"}
+                className="w-full rounded-xl"
+                data-testid={`button-get-started-${idx}`}
+              >
+                Get Started
+              </Button>
             </motion.div>
           ))}
         </div>
@@ -127,7 +150,7 @@ export default function Services() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">Our Vehicle Sourcing Process</h2>
             <p className="text-lg text-muted-foreground">
-              When you choose Vehicle Sourcing, here's exactly what we do to find your perfect car.
+              When you choose Custom Search Service, here's exactly what we do to find your perfect car.
             </p>
           </div>
 
@@ -150,16 +173,17 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Pricing Disclaimer */}
-        <div className="mt-32 pt-20 border-t border-border">
-          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 max-w-3xl mx-auto text-center">
-            <p className="text-lg text-foreground font-semibold mb-3">
-              💡 Pricing Information
-            </p>
-            <p className="text-muted-foreground">
-              Pricing for all services will be provided once we've matched you with a vehicle or completed your deal analysis. We charge only after we deliver results—when you get your car or finalize a deal on the vehicle you want.
-            </p>
-          </div>
+        {/* CTA */}
+        <div className="mt-24 text-center">
+          <p className="text-muted-foreground mb-6 text-lg">Ready to get started? Reach out and we'll take it from there.</p>
+          <Button
+            size="lg"
+            onClick={() => navigate("/contact")}
+            className="rounded-xl px-10 shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-semibold"
+            data-testid="button-contact-cta"
+          >
+            Contact Us
+          </Button>
         </div>
       </div>
     </div>
